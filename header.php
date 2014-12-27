@@ -19,7 +19,9 @@
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 
 	<header class="header">
-		HEADER
+		<div class="container">
+			HEADER
+		</div>
 	</header>
 
     <div id="content" class="content">

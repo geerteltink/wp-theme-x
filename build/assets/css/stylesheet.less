@@ -34,7 +34,7 @@
 @import "../../bower_components/bootstrap/less/progress-bars.less";
 //@import "../../bower_components/bootstrap/less/media.less";
 //@import "../../bower_components/bootstrap/less/list-group.less";
-@import "../../bower_components/bootstrap/less/panels.less";
+//@import "../../bower_components/bootstrap/less/panels.less";
 @import "../../bower_components/bootstrap/less/responsive-embed.less";
 //@import "../../bower_components/bootstrap/less/wells.less";
 //@import "../../bower_components/bootstrap/less/close.less";
@@ -45,11 +45,12 @@
 
 // WordPress classes
 @import "wordpress/core.less";
-//@import "wordpress/post.less";
+@import "wordpress/post.less";
 
 // Custom components
-//@import "less/layout.less";
-//@import "less/header.less";
+@import "layout/header.less";
+@import "layout/content.less";
+@import "layout/footer.less";
 
 // Components w/ JavaScript
 //@import "../../bower_components/bootstrap/less/modals.less";
