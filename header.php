@@ -14,13 +14,56 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php if (is_singular() && get_option('thread_comments')) { wp_enqueue_script('comment-reply'); } ?>
 	<?php wp_head(); ?>
+
+	<script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/js/plugins.js"></script>
 </head>
 <body <?php body_class(); ?>>
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 
 	<header class="header">
 		<div class="container">
-			HEADER
+			<?php
+			if (is_front_page() && is_home()) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+			<?php endif;
+
+			$description = get_bloginfo('description', 'display');
+			if ($description || is_customize_preview()) : ?>
+				<p class="site-description"><?php echo $description; ?></p>
+			<?php endif; ?>
+
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">Brand</a>
+					</div>
+
+					<?php if (has_nav_menu('primary')) {
+						// Social links navigation menu.
+						wp_nav_menu(array(
+							'theme_location'  => 'primary',
+							'menu'            => 'primary',
+							'container'       => 'div',
+							'container_class' => 'collapse navbar-collapse',
+							'container_id'    => 'primary-navigation',
+							'menu_class'      => 'nav navbar-nav',
+							'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+							'walker'          => new wp_bootstrap_navwalker()
+						));
+					} ?>
+
+				</div><!-- /.container-fluid -->
+			</nav>
+
 		</div>
 	</header>
 

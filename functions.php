@@ -1,5 +1,8 @@
 <?php
 
+// Register Custom Navigation Walker
+require_once('inc/wp_bootstrap_navwalker.php');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
