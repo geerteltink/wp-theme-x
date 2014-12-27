@@ -46,19 +46,19 @@ function themex_post_thumbnail() {
 		return;
 	}
 
-	if (is_singular()) : ?>
+	if (is_singular()) :
 
-		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div>
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 
-	<?php else : ?>
+	else :
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-			<?php the_post_thumbnail('post-thumbnail', array('alt' => get_the_title())); ?>
-		</a>
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-thumbnail');
 
-	<?php endif;
+	endif; ?>
+
+	<div class="post__thumbnail" style="background-image: url('<?php echo $image[0]; ?>');"></div>
+
+	<?php
 }
 
 /**

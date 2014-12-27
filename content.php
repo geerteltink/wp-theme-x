@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
-		// Post thumbnail.
+		// Post thumbnail
 		themex_post_thumbnail();
 	?>
 
@@ -34,7 +34,7 @@
 	</div>
 
 	<?php
-		// Author bio.
+		// Author bio
 		if (is_single() && get_the_author_meta('description')) :
 			get_template_part('author-bio');
 		endif;
