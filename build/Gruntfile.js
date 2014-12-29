@@ -23,13 +23,33 @@ module.exports = function (grunt) {
         cwd: 'bower_components/bootstrap/fonts',
         src: ['**'],
         dest: '<%= target %>/fonts'
-      },
+      }
     },
 
     less: {
-      production: {
+      dev: {
         options: {
-          cleancss: false
+          cleancss: false,
+          compress: false,
+          strictImports: true,
+          strictMath: true,
+          strictUnits: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: 'stylesheet.css.map',
+          sourceMapFilename: '<%= target %>/css/stylesheet.css.map'
+        },
+        files: {
+          '<%= target %>/css/stylesheet.css': 'assets/css/stylesheet.less'
+        }
+      },
+      dist: {
+        options: {
+          cleancss: false,
+          compress: true,
+          strictImports: true,
+          strictMath: true,
+          strictUnits: true
         },
         files: {
           '<%= target %>/css/stylesheet.css': 'assets/css/stylesheet.less'
@@ -69,17 +89,10 @@ module.exports = function (grunt) {
       }
     },
 
-    clean: {
-      dist: [
-        'tmp/**',
-        '<%= target %>/img/**'
-      ]
-    },
-
     watch: {
       css: {
         files: ['assets/css/**'],
-        tasks: ['less'],
+        tasks: ['less:dev'],
         options: {
           livereload: true,
           atBegin: true
@@ -120,6 +133,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'copy', 'less', 'uglify', 'imagemin'
+    'copy', 'less:dist', 'uglify', 'imagemin'
   ]);
 };
