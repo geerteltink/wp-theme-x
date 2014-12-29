@@ -60,6 +60,9 @@ module.exports = function (grunt) {
     uglify: {
       build: {
         files: {
+          '<%= target %>/js/jquery.js': [
+            'bower_components/jquery/dist/jquery.js'
+          ],
           '<%= target %>/js/plugins.js': [
             'bower_components/bootstrap/js/transition.js',
             'bower_components/bootstrap/js/alert.js',
