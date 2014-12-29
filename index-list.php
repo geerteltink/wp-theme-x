@@ -6,7 +6,9 @@
 				<?php the_post_thumbnail('thumbnail'); ?>
 			</div>
 			<div class="media-body">
-				<h2 class="media-heading media-list__heading"><?php the_title(); ?></h2>
+				<h2 class="media-heading media-list__heading">
+					<a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title(); ?></a>
+				</h2>
 				<div class="media-list__meta">
 					<i class="glyphicon glyphicon-time"></i>
 					<time class="entry-date published" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
