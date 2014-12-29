@@ -6,14 +6,22 @@
         <?php
 
         if (have_posts()) {
-            if (is_singular()) {
-                // Include the single post-format-specific template for the content.
-				// You can override this file by creating a file called content-<post-format>.php.
-                get_template_part('content', get_post_format());
-            } else {
-                // Get the list
-                get_template_part('index-list');
-            }
+
+			// Start the loop.
+			while (have_posts()) : the_post();
+
+                if (is_singular()) {
+                    // Include the single post-format-specific template for the content.
+                    // You can override this file by creating a file called content-<post-format>.php.
+                    get_template_part('content', get_post_format());
+                } else {
+                    // Get the content-list. This is an extra template to list posts.
+                    // It is not an official post format.
+                    get_template_part('content', 'list');
+                }
+
+                // End the loop.
+            endwhile;
 
             // Previous/next page navigation.
             the_posts_pagination(array(
