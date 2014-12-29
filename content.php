@@ -13,12 +13,7 @@
 			<?php edit_post_link(__('Edit', 'themex'), '&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-pencil"></i> <span>', '</span>'); ?>
 		</div>
 	</header>
-
-	<?php
-		// Post thumbnail
-		themex_post_thumbnail();
-	?>
-
+	<?php themex_post_thumbnail(); ?>
 	<div class="post__content">
 		<div class="row">
 			<div class="col-md-8">
@@ -50,5 +45,4 @@
 			</aside>
 		</div>
 	</div>
-
 </article>
