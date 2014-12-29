@@ -2,7 +2,14 @@
 	<p class="post-author__by"><?php _e('Published by', 'themex'); ?></p>
 	<div class="media">
 		<div class="media-body">
-			<p class="post-author__name"><?php echo get_the_author(); ?></p>
+			<p class="post-author__name">
+				<?php if (get_the_author_meta('first_name') && get_the_author_meta('last_name')) {
+					echo get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name');
+                } else {
+					echo get_the_author();
+				}
+				?>
+			</p>
 			<p class="post-author__desc"><?php the_author_meta('description'); ?></p>
 			<a class="post-author__link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" rel="author">
 				<?php printf( __('View all posts by %s', 'twentyfifteen'), get_the_author()); ?>
