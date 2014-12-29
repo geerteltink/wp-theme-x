@@ -24,11 +24,7 @@
             endwhile;
 
             // Previous/next page navigation.
-            the_posts_pagination(array(
-                'prev_text'          => __('Previous page', 'themex'),
-                'next_text'          => __('Next page', 'themex'),
-                'before_page_number' => '<span class="nav__meta sr-only">' . __('Page', 'themex') . ' </span>',
-            ));
+            themex_pagination();
 
         } else {
             // If no content, include the "No posts found" template.

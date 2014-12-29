@@ -10,7 +10,8 @@ require_once('inc/wp_bootstrap_navwalker.php');
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function themex_setup() {
+function themex_setup()
+{
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -41,7 +42,8 @@ add_action('after_setup_theme', 'themex_setup');
  * @param $length
  * @return int
  */
-function themex_excerpt_length($length) {
+function themex_excerpt_length($length)
+{
 	return 32;
 }
 add_filter('excerpt_length', 'themex_excerpt_length', 999);
@@ -52,10 +54,36 @@ add_filter('excerpt_length', 'themex_excerpt_length', 999);
  * @param $more
  * @return string
  */
-function themex_excerpt_more($more) {
+function themex_excerpt_more($more)
+{
 	return '...';
 }
 add_filter('excerpt_more', 'themex_excerpt_more');
+
+function themex_pagination()
+{
+	$pages = paginate_links(array(
+		'type' => 'array',
+		'prev_next' => true,
+		'prev_text' => __('&laquo; Previous page', 'themex'),
+		'next_text' => __('Next page &raquo;', 'themex')
+	));
+
+	if (is_array($pages)) {
+		echo '<ul class="pagination">';
+		foreach ($pages as $page) {
+			if (strpos($page, 'current') !== false) {
+				echo '<li class="active">' . $page . '</li>';
+			} else {
+				echo '<li>' . $page . '</li>';
+			}
+
+		}
+		echo '</ul>';
+	}
+}
+
+
 
 
 
