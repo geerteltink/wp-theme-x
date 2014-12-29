@@ -4304,6 +4304,9 @@ a img.aligncenter {
   font-weight: bold;
   font-size: 16px;
 }
+.post-author__avatar img {
+  border-radius: 50%;
+}
 .article {
   margin-bottom: 22px;
 }
