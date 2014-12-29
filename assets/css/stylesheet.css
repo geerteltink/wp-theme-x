@@ -4304,17 +4304,21 @@ a img.aligncenter {
   font-weight: bold;
   font-size: 16px;
 }
+.article {
+  margin-bottom: 22px;
+}
 .article__heading {
   font-size: 20px;
+  margin-top: 0;
 }
 .article__meta {
   color: #bbbbbb;
   font-size: 14px;
   text-transform: uppercase;
-  margin-bottom: 22px / 2;
+  margin-bottom: 11px;
 }
 .article__thumbnail {
-  margin: 22px 0;
+  margin: 0 0 22px 0;
 }
 .article__thumbnail > img {
   max-width: 100%;
@@ -4322,7 +4326,8 @@ a img.aligncenter {
 }
 .article__thumbnail--xs {
   float: right;
-  margin: 0 0 11px 11px;
+  margin-left: 11px;
+  margin-bottom: 11px;
 }
 .article__thumbnail--xs > img {
   max-width: 128px;
