@@ -17,7 +17,7 @@ function themex_setup() {
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(1280, 720, true);
+	set_post_thumbnail_size(320, 180, true);
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus(array(
