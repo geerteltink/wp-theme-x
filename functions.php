@@ -36,6 +36,31 @@ function themex_setup() {
 add_action('after_setup_theme', 'themex_setup');
 
 /**
+ * Change the excerpt length
+ *
+ * @param $length
+ * @return int
+ */
+function themex_excerpt_length($length) {
+	return 32;
+}
+add_filter('excerpt_length', 'themex_excerpt_length', 999);
+
+/**
+ * Change the excerpt ellipses
+ *
+ * @param $more
+ * @return string
+ */
+function themex_excerpt_more($more) {
+	return '...';
+}
+add_filter('excerpt_more', 'themex_excerpt_more');
+
+
+
+
+/**
  * Display an optional post thumbnail.
  *
  * Wraps the post thumbnail in an anchor element on index views, or a div
