@@ -119,14 +119,23 @@ function themex_enqueue_scripts()
 		wp_enqueue_script('themex-plugins', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), false, true);
 	}
 }
-
 add_action('wp_enqueue_scripts', 'themex_enqueue_scripts');
 
 /**
  * Optimize page loading
  */
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wp_generator');
-//remove_action('wp_head', 'wp_enqueue_scripts', 1);
-//add_action('wp_footer', 'wp_enqueue_scripts', 1);
+function themex_optimize_page_loading() {
+	// Remove some links from the head
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'rsd_link');
+
+	// Remove wordpress generator info
+	remove_action('wp_head', 'wp_generator');
+
+	// Force JavaScript at the end of the page for faster loading
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+}
+add_action('after_setup_theme', 'themex_optimize_page_loading');
