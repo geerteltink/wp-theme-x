@@ -1,15 +1,19 @@
 $(document).ready(function() {
-    $('.navbar-container').affix({
-        offset: {
-            top: $('.navbar-container').offset().top - $(document).scrollTop() - 30
-        }
+    var $container = $('.navbar-container');
+
+    $container.on('affix.bs.affix', function() {
+        $('.content').css('padding-top', $container.height());
     });
 
-    $('.navbar-container').on('affix.bs.affix', function() {
-        $('.content').css('padding-top', $('.navbar-container').height());
-    });
-
-    $('.navbar-container').on('affix-top.bs.affix', function (){
+    $container.on('affix-top.bs.affix', function (){
         $('.content').css('padding-top', 0);
+    });
+
+    $(window).on('load', function() {
+        $container.affix({
+            offset: {
+                top: $container.offset().top - 30
+            }
+        });
     });
 });
