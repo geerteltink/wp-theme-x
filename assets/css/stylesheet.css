@@ -4269,7 +4269,7 @@ a img.aligncenter {
   color: #777777;
 }
 .post__header {
-  padding: 0 4% 2em 4%;
+  padding: 22px 4% 22px 4%;
 }
 .post__meta {
   color: #bbbbbb;
@@ -4304,7 +4304,7 @@ a img.aligncenter {
 }
 .article__heading {
   font-size: 20px;
-  margin-top: 0;
+  margin-top: 22px;
 }
 .article__meta {
   color: #bbbbbb;
@@ -4338,6 +4338,24 @@ a img.aligncenter {
 }
 .header {
   background-color: #ffffff;
+}
+.navbar-container {
+  background-color: #ffffff;
+}
+.navbar-primary {
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  margin-bottom: 0;
+}
+.navbar-container.affix {
+  position: fixed;
+  top: 30px;
+  width: 100%;
+  z-index: 200;
+}
+.navbar-container.affix .navbar {
+  box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.75);
 }
 .content {
   padding-bottom: 22px;

@@ -1,0 +1,28 @@
+.navbar-container {
+    background-color: @header-bg;
+}
+
+.navbar-primary {
+    -webkit-transition: all 0.25s ease-in;
+    -moz-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in;
+
+    margin-bottom: 0;
+}
+
+// Element is in its top-most position
+.navbar-container.affix-top {
+
+}
+
+// Scrolling past the element you want affixed should trigger the actual affixing.
+.navbar-container.affix {
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    z-index: 200;
+
+    .navbar {
+        box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.75);
+    }
+}

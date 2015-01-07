@@ -26,39 +26,39 @@
 			if ($description || is_customize_preview()) : ?>
 				<p class="site-description"><?php echo $description; ?></p>
 			<?php endif; ?>
-
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">Brand</a>
-					</div>
-
-					<?php if (has_nav_menu('primary')) {
-						// Social links navigation menu.
-						wp_nav_menu(array(
-							'theme_location'  => 'primary',
-							'menu'            => 'primary',
-							'container'       => 'div',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'primary-navigation',
-							'menu_class'      => 'nav navbar-nav',
-							'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-							'walker'          => new wp_bootstrap_navwalker()
-						));
-					} ?>
-
-				</div><!-- /.container-fluid -->
-			</nav>
-
 		</div>
 	</header>
+
+	<div class="navbar-container">
+		<nav class="navbar navbar-inverse navbar-primary container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">Brand</a>
+			</div>
+
+			<?php if (has_nav_menu('primary')) {
+				// Social links navigation menu.
+				wp_nav_menu(array(
+					'theme_location'  => 'primary',
+					'menu'            => 'primary',
+					'container'       => 'div',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'primary-navigation',
+					'menu_class'      => 'nav navbar-nav',
+					'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+					'walker'          => new wp_bootstrap_navwalker()
+				));
+			} ?>
+
+		</nav>
+	</div>
 
     <div id="content" class="content">
         <div class="container">
