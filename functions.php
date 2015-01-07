@@ -89,19 +89,23 @@ function themex_pagination()
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  */
-function themex_post_thumbnail()
+function themex_cover_image($size = 'md')
 {
 	if (post_password_required() || is_attachment() || !has_post_thumbnail()) {
 		return;
 	}
 
 	if (is_singular()) {
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 	} else {
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail' );
+		$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-thumbnail');
 	}
 
-	echo sprintf('<div class="post__thumbnail" style="background-image: url(\'%s\');"></div>', $image[0]);
+	echo sprintf(
+		'<div class="cover-img cover-img-%s" style="background-image: url(\'%s\');"></div>',
+		$size,
+		$image[0]
+	);
 }
 
 /**

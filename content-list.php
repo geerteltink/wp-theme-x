@@ -21,8 +21,8 @@
 				<?php the_excerpt(); ?>
 			</div>
 		</div>
-		<div class="col-sm-4 col-lg-3 hidden-xs article__thumbnail">
-			<?php the_post_thumbnail('thumbnail'); ?>
+		<div class="col-sm-4 col-lg-3 hidden-xs">
+			<?php themex_cover_image('xs'); ?>
 		</div>
 	</div>
 </article>

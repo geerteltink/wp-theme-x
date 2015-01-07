@@ -13,7 +13,7 @@
 			<?php edit_post_link(__('Edit', 'themex'), '&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-pencil"></i> <span>', '</span>'); ?>
 		</div>
 	</header>
-	<?php themex_post_thumbnail(); ?>
+	<?php themex_cover_image('md'); ?>
 	<div class="post__content">
 		<div class="row">
 			<div class="col-md-8">
