@@ -1,0 +1,12 @@
+{
+    "name": "xtreamwayz/theme-x",
+    "description": "WordPress theme framework",
+    "type": "wordpress-theme",
+    "homepage": "https://github.com/xtreamwayz/theme-x",
+    "license": "MIT",
+    "authors": [{
+        "name": "Geert Eltink",
+        "homepage": "https://xtreamwayz.github.io/",
+        "role": "Lead Developer"
+    }]
+}
