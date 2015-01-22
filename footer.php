@@ -30,7 +30,8 @@
 
                 </div>
                 <div class="col-md-6 text-right">
-                    Developed by <a href="http://twitter.com/xtreamwayz">@xtreamwayz</a>
+                    <a href="https://github.com/xtreamwayz/wp-theme-x">Theme X</a> is developed by
+                    <a href="http://xtreamwayz.github.io/">@XtreamWayz</a>
                 </div>
             </div>
         </div>
