@@ -12,7 +12,7 @@ $(document).ready(function() {
     $(window).on('load', function() {
         $container.affix({
             offset: {
-                top: $container.offset().top - 30
+                top: $container.offset().top
             }
         });
     });
