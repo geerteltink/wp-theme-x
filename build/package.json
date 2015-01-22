@@ -1,18 +1,19 @@
 {
-  "name": "Theme-X",
-  "version": "1.0.0",
-  "dependencies": {
-    "grunt": "^0.4.4"
-  },
-  "devDependencies": {
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-imagemin": "^0.7.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^0.11.0",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-jslint": "^1.1.10",
-    "grunt-notify": "^0.3.0"
-  }
+    "name": "Theme-X",
+    "devDependencies": {
+        "jshint": "latest",
+        "less": "latest",
+        "uglify-js": "latest"
+    },
+    "scripts": {
+        "test": "npm run test:lint",
+        "test:lint": "jshint assets/js/",
+
+        "build": "npm run build:prepare && npm run build:css && npm run build:icons && npm run build:jquery  && npm run build:scripts",
+        "build:prepare": "rm -rf ../assets && mkdir \"../assets/css\" && mkdir \"../assets/img\" && mkdir \"../assets/fonts\" && mkdir \"../assets/js\"",
+        "build:css": "lessc -x assets/css/stylesheet.less > ../assets/css/stylesheet.css",
+        "build:icons": "cp bower_components/bootstrap/fonts/** ../assets/fonts/",
+        "build:jquery": "uglifyjs bower_components/jquery/dist/jquery.js -o ../assets/js/jquery.js -c -m",
+        "build:scripts": "cat bower_components/bootstrap/js/transition.js bower_components/bootstrap/js/button.js bower_components/bootstrap/js/collapse.js bower_components/bootstrap/js/dropdown.js bower_components/bootstrap/js/affix.js assets/js/navbar.js | uglifyjs -o ../assets/js/plugins.js -c -m"
+    }
 }
