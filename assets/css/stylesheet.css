@@ -4350,12 +4350,14 @@ a img.aligncenter {
 }
 .navbar-container.affix {
   position: fixed;
-  top: 30px;
+  top: 0px;
   width: 100%;
   z-index: 200;
 }
 .navbar-container.affix .navbar {
   box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.75);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .content {
   padding-bottom: 22px;

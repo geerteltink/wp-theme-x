@@ -19,14 +19,7 @@
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 
 	<header class="header">
-		<div class="container">
-			<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-			<?php
-			$description = get_bloginfo('description', 'display');
-			if ($description || is_customize_preview()) : ?>
-				<p class="site-description"><?php echo $description; ?></p>
-			<?php endif; ?>
-		</div>
+		<?php get_template_part('inc/header'); ?>
 	</header>
 
 	<div class="navbar-container">
@@ -40,11 +33,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">Brand</a>
+				<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+					<?php bloginfo('name'); ?>
+				</a>
 			</div>
 
 			<?php if (has_nav_menu('primary')) {
-				// Social links navigation menu.
+				// Primary navigation menu
 				wp_nav_menu(array(
 					'theme_location'  => 'primary',
 					'menu'            => 'primary',
