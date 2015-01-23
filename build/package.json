@@ -12,15 +12,15 @@
         "update": "npm run update:bower -s",
         "update:bower": "bower install",
 
-        "clean": "rm -rf ../assets && mkdir \"../assets/css\" && mkdir \"../assets/img\" && mkdir \"../assets/fonts\" && mkdir \"../assets/js\"",
+        "clean": "rm -rf ../assets && mkdir \"../assets\" && mkdir \"../assets/css\" && mkdir \"../assets/img\" && mkdir \"../assets/fonts\" && mkdir \"../assets/js\"",
 
         "test": "npm run test:lint -s",
-        "test:lint": "jshint assets/js/",
+        "test:lint": "jshint src/js/",
 
         "build": "npm run build:css -s && npm run build:icons -s && npm run build:jquery -s  && npm run build:scripts -s",
-        "build:css": "lessc -x assets/css/stylesheet.less > ../assets/css/stylesheet.css",
+        "build:css": "lessc -x src/css/stylesheet.less > ../assets/css/stylesheet.css",
         "build:icons": "cp bower_components/bootstrap/fonts/** ../assets/fonts/",
         "build:jquery": "uglifyjs bower_components/jquery/dist/jquery.js -o ../assets/js/jquery.js -c -m",
-        "build:scripts": "cat bower_components/bootstrap/dist/js/bootstrap.js assets/js/*.js | uglifyjs -o ../assets/js/bundle.js -mc"
+        "build:scripts": "cat bower_components/bootstrap/dist/js/bootstrap.js src/js/*.js | uglifyjs -o ../assets/js/bundle.js -mc"
     }
 }
