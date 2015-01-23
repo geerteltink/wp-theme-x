@@ -109,6 +109,22 @@ function themex_cover_image($size = 'md')
 }
 
 /**
+ * Enable widget areas
+ */
+function themex_widgets_init()
+{
+	register_sidebar(array(
+		'name'          => 'Home right sidebar',
+		'id'            => 'sidebar_home_right',
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget__title">',
+		'after_title'   => '</h3>',
+	));
+}
+add_action('widgets_init', 'themex_widgets_init');
+
+/**
  * Enqueue scripts
  */
 function themex_enqueue_scripts()

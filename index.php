@@ -2,9 +2,12 @@
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+        <?php if ((is_front_page() || is_archive()) && is_active_sidebar('sidebar_home_right')) : ?>
+        <div class="row">
+            <div class="col-sm-8">
+        <?php endif; ?>
 
         <?php
-
         if (have_posts()) {
 
 			// Start the loop.
@@ -30,8 +33,15 @@
             // If no content, include the "No posts found" template.
             get_template_part('content', 'none');
         }
-
         ?>
+
+        <?php if ((is_front_page() || is_archive()) && is_active_sidebar('sidebar_home_right')) : ?>
+            </div>
+            <div class="col-sm-4" role="complementary">
+                <?php dynamic_sidebar('sidebar_home_right'); ?>
+            </div>
+        </div>
+        <?php endif; ?>
 
     </main>
 </div>
