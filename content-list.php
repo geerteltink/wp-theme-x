@@ -1,4 +1,4 @@
-<article class="article">
+<article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
 	<div class="row">
 		<div class="col-sm-8 col-lg-9">
 			<div class="visible-xs article__thumbnail article__thumbnail--xs">
