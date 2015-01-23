@@ -2,7 +2,7 @@
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-        <?php if ((is_front_page() || is_archive()) && is_active_sidebar('sidebar_home_right')) : ?>
+        <?php if ((is_front_page() || is_archive() || is_search()) && is_active_sidebar('sidebar_home_right')) : ?>
         <div class="row">
             <div class="col-sm-8">
         <?php endif; ?>
@@ -35,7 +35,7 @@
         }
         ?>
 
-        <?php if ((is_front_page() || is_archive()) && is_active_sidebar('sidebar_home_right')) : ?>
+        <?php if ((is_front_page() || is_archive() || is_search()) && is_active_sidebar('sidebar_home_right')) : ?>
             </div>
             <div class="col-sm-4" role="complementary">
                 <?php dynamic_sidebar('sidebar_home_right'); ?>
