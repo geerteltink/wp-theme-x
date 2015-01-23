@@ -6,6 +6,8 @@ This WordPress theme can be used stand-alone, but it's best extended by a child 
 
 Assets are already pre-compiled, but if you like you can change files and compile the assets again. For this NodeJS and npm are required. Instead of using Grunt, npm scripts are used for building assets. A Grunt configuration file can become very complicated and causes a lot of overhead.
 
+The npm scripts can be run on windows and unix (or within your Vagrant box). This might change in the future to unix only if required, but so far they are compatible.
+
 ### Install / update npm packages
 
 Packages are installed globally... !!! I know this is bad practice, but the few that are needed are required for other (child) themes as well. During setup ``sudo`` is needed.
