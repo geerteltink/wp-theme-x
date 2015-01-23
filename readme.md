@@ -25,3 +25,9 @@ Dependencies like jQuery and bootstrap are managed under the hood by bower. all 
 Assets can be build with:
 
     npm run build
+
+### Start over
+
+In case the assets need to be reset:
+
+    npm run clean
