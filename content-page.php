@@ -9,7 +9,7 @@
 			<?php edit_post_link(__('Edit', 'themex'), '&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-pencil"></i> <span>', '</span>'); ?>
 		</div>
 	</header>
-	<?php themex_post_thumbnail(); ?>
+	<?php themex_cover_image(); ?>
 	<div class="post__content">
 		<?php
 		/* translators: %s: Name of current post */
