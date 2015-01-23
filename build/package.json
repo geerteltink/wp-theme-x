@@ -1,19 +1,26 @@
 {
     "name": "Theme-X",
-    "devDependencies": {
-        "jshint": "latest",
-        "less": "latest",
-        "uglify-js": "latest"
-    },
+    "private": true,
     "scripts": {
-        "test": "npm run test:lint",
+        "setup": "npm run setup:npm -s && npm run setup:jshint -s && npm run setup:less -s && npm run setup:uglify-js -s && npm run setup:bower -s",
+        "setup:npm": "npm install npm -g",
+        "setup:jshint": "npm install jshint -g",
+        "setup:less": "npm install less -g",
+        "setup:uglify-js": "npm install uglify-js -g",
+        "setup:bower": "npm install bower -g",
+
+        "update": "npm run update:bower -s",
+        "update:bower": "bower install",
+
+        "clean": "rm -rf ../assets && mkdir \"../assets/css\" && mkdir \"../assets/img\" && mkdir \"../assets/fonts\" && mkdir \"../assets/js\"",
+
+        "test": "npm run test:lint -s",
         "test:lint": "jshint assets/js/",
 
-        "build": "npm run build:prepare && npm run build:css && npm run build:icons && npm run build:jquery  && npm run build:scripts",
-        "build:prepare": "rm -rf ../assets && mkdir \"../assets/css\" && mkdir \"../assets/img\" && mkdir \"../assets/fonts\" && mkdir \"../assets/js\"",
+        "build": "npm run build:css -s && npm run build:icons -s && npm run build:jquery -s  && npm run build:scripts -s",
         "build:css": "lessc -x assets/css/stylesheet.less > ../assets/css/stylesheet.css",
         "build:icons": "cp bower_components/bootstrap/fonts/** ../assets/fonts/",
         "build:jquery": "uglifyjs bower_components/jquery/dist/jquery.js -o ../assets/js/jquery.js -c -m",
-        "build:scripts": "cat bower_components/bootstrap/js/transition.js bower_components/bootstrap/js/button.js bower_components/bootstrap/js/collapse.js bower_components/bootstrap/js/dropdown.js bower_components/bootstrap/js/affix.js assets/js/navbar.js | uglifyjs -o ../assets/js/plugins.js -c -m"
+        "build:scripts": "cat bower_components/bootstrap/dist/js/bootstrap.js assets/js/*.js | uglifyjs -o ../assets/js/bundle.js -mc"
     }
 }
