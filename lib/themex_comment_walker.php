@@ -1,9 +1,4 @@
 <?php
-function themex_get_avatar($avatar) {
-    $avatar = str_replace("class='avatar", "class='avatar media-object", $avatar);
-    return $avatar;
-}
-add_filter('get_avatar', 'themex_get_avatar');
 
 /**
  * Use Bootstrap's media object for listing comments
