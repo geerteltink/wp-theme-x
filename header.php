@@ -43,8 +43,8 @@
 					'container_class' => 'collapse navbar-collapse',
 					'container_id'    => 'primary-navigation',
 					'menu_class'      => 'nav navbar-nav',
-					'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-					'walker'          => new wp_bootstrap_navwalker()
+					'fallback_cb'     => 'Themex_Nav_Walker::fallback',
+					'walker'          => new Themex_Nav_Walker()
 				));
 			} ?>
 
