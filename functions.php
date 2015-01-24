@@ -1,6 +1,7 @@
 <?php
 
 // Register Custom Navigation Walker
+require_once('lib/themex_comment_walker.php');
 require_once('lib/themex_nav_walker.php');
 
 /**

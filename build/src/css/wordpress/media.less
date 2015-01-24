@@ -1,0 +1,176 @@
+//------------------------------------------------------------------------------
+// Media
+//------------------------------------------------------------------------------
+// THE media object
+// Source: http://stubbornella.org/content/?p=497
+//------------------------------------------------------------------------------
+
+/*
+
+<div class="media">
+    <a class="media-object" href="#">
+        <img data-src="..." alt="..." />
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">Heading</h4>
+        <h5 class="media-subheading">Sub heading</h5>
+        <div class="media-content">
+            ... Optional media-content class for larger separation of the heading.
+        </div>
+        ...
+    </div>
+</div>
+
+*/
+
+.media,
+.media-body {
+    overflow: hidden;
+    zoom: 1;
+
+    .clearfix();
+}
+
+.media {
+    // Proper spacing between instances of .media
+    margin-top: 15px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.media-divider {
+    margin-top: (@line-height-computed / 2);
+    padding-top: (@line-height-computed / 2);
+    //background: url('img/divider.png?v=@{core-version}') no-repeat 0 0;
+}
+
+//------------------------------------------------------------------------------
+// media-object
+//------------------------------------------------------------------------------
+
+.media-object {
+    float: left;
+    margin-right: 10px;
+
+    > img {
+        display: block;
+    }
+}
+
+.media-object-right {
+    float: right;
+    margin-left: 10px;
+}
+
+.media-object-circle {
+    > img {
+        border-radius: 50%;
+    }
+}
+
+.media-object-xs {
+    width: 32px;
+    height: 32px;
+
+    .icon {
+        font-size: 32px;
+        color: @text-color-light;
+    }
+
+    img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+
+.media-object-sm {
+    width: 48px;
+    height: 48px;
+
+    .icon {
+        font-size: 48px;
+        color: @text-color-light;
+    }
+
+    img {
+        max-width: 48px;
+        max-height: 48px;
+    }
+}
+
+.media-object-md {
+    width: 64px;
+    height: 64px;
+
+    .icon {
+        font-size: 64px;
+        color: @text-color-light;
+    }
+
+    img {
+        max-width: 64px;
+        max-height: 64px;
+    }
+}
+
+.media-object-lg {
+    width: 128px;
+    height: 128px;
+
+    .icon {
+        font-size: 128px;
+        color: @text-color-light;
+    }
+
+    img {
+        height: 128px;
+        width: auto;
+        max-width: 128px;
+        max-height: 128px;
+    }
+}
+
+//------------------------------------------------------------------------------
+// media-heading
+//------------------------------------------------------------------------------
+
+// Reset margins on headings for tighter default spacing
+.media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    color: @text-color;
+
+    a {
+        color: @text-color;
+    }
+}
+
+.media-heading-xs {
+    font-size: @font-size-h5;
+}
+
+.media-heading-sm {
+    font-size: @font-size-h4;
+}
+
+.media-subheading {
+    color: @gray-light;
+    display: block;
+}
+
+// Extra class to use to separate the body content from the header
+.media-content {
+    margin: (@line-height-computed / 2) 0;
+}
+
+//------------------------------------------------------------------------------
+// media list variation
+//------------------------------------------------------------------------------
+
+.media-list {
+    padding-left: 0;
+    list-style: none;
+}
