@@ -10,8 +10,8 @@ if (post_password_required()) {
             <?php
                 printf(
                     _nx(
-                        'One thought on &ldquo;%2$s&rdquo;',
-                        '%1$s thoughts on &ldquo;%2$s&rdquo;',
+                        'One response to &ldquo;%2$s&rdquo;',
+                        '%1$s Responses to &ldquo;%2$s&rdquo;',
                         get_comments_number(),
                         'comments title',
                         'themex'
