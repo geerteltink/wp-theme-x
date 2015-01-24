@@ -45,4 +45,7 @@
 			</aside>
 		</div>
 	</div>
+	<footer>
+		<?php comments_template(); ?>
+	</footer>
 </article>
