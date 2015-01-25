@@ -8,26 +8,25 @@ Assets are already pre-compiled, but if you like you can change files and compil
 
 The npm scripts can be run on windows and unix (or within your Vagrant box). This might change in the future to unix only if required, but so far they are compatible.
 
-### Install / update npm packages
+## Watching assets for changes
 
-Packages are installed globally... !!! I know this is bad practice, but the few that are needed are required for other (child) themes as well. During setup ``sudo`` is needed.
+If any assets changed in the ``src/`` while big brother is watching, assets are compiled and reloaded as long as 'WP_DEBUG = true'. This is done with LiveReload and a JavaScript being injected that takes care of this. No need for any browser plugins. This is done for you.
 
+## Using npm run commands
+
+Packages are installed globally... I know this is bad practice, but the few that are needed are required for other (child) themes as well. During setup ``sudo`` is needed. Besides that windows is choking in paths that are too long and the wordpress theme check plugin as well.
+
+    // Install packages globally. Run as root on unix systems.
     sudo npm run setup
 
-### Update dependencies
-
-Dependencies like jQuery and bootstrap are managed under the hood by bower. all you need to know is this command:
-
+    // Update assets dependencies like jQuery and bootstrap. Managed by bower.
     npm run update
 
-### Build assets
+    // In case the assets path need to be reset.
+    npm run clean
 
-Assets can be build with:
-
+    // Build assets.
     npm run build
 
-### Start over
-
-In case the assets need to be reset:
-
-    npm run clean
+    // Watch assets for changes.  
+    npm run watch
