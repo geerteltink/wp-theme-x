@@ -20,17 +20,17 @@
         "test": "npm run test:lint -s",
         "test:lint": "jshint src/js/",
 
-        "build": "npm run build:css -s && npm run build:icons -s && npm run build:jquery -s  && npm run build:scripts -s",
-        "build:css": "lessc -x src/css/stylesheet.less > ../assets/css/stylesheet.css",
+        "build": "npm run build:styles -s && npm run build:icons -s && npm run build:jquery -s  && npm run build:scripts -s",
+        "build:styles": "lessc -x src/css/stylesheet.less > ../assets/css/stylesheet.css",
         "build:icons": "cp bower_components/bootstrap/fonts/** ../assets/fonts/",
         "build:jquery": "uglifyjs bower_components/jquery/dist/jquery.js -o ../assets/js/jquery.js -c -m",
-        "build:js": "cat bower_components/bootstrap/dist/js/bootstrap.js src/js/*.js | uglifyjs -o ../assets/js/bundle.js -mc",
-        "prebuild:js": "npm run test:lint -s",
+        "build:scripts": "cat bower_components/bootstrap/dist/js/bootstrap.js src/js/*.js | uglifyjs -o ../assets/js/bundle.js -mc",
+        "prebuild:scripts": "npm run test:lint -s",
 
         "livereload": "live-reload --port 35729 ../assets",
 
-        "watch": "parallelshell \"npm run livereload\" \"npm run watch:js\" \"npm run watch:css\"",
-        "watch:css": "watch \"npm run build:css\" src/css/",
-        "watch:js": "watch \"npm run build:js\" src/js/"
+        "watch": "parallelshell \"npm run livereload\" \"npm run watch:scripts\" \"npm run watch:styles\"",
+        "watch:styles": "watch \"npm run build:styles\" src/css/",
+        "watch:scripts": "watch \"npm run build:scripts\" src/js/"
     }
 }
