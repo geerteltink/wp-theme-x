@@ -1,13 +1,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="post__header">
 		<h1 class="post__title"><?php the_title(); ?></h1>
+		<?php if (current_user_can('edit_pages')) : ?>
 		<div class="post__meta">
-			<i class="glyphicon glyphicon-time"></i>&nbsp;
-			<time class="entry-date published" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
-				<?php echo get_the_date(); ?>
-			</time>
-			<?php edit_post_link(__('Edit', 'themex'), '&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-pencil"></i> <span>', '</span>'); ?>
+			<?php edit_post_link(__('Edit', 'themex'), '<i class="glyphicon glyphicon-pencil"></i> <span>', '</span>'); ?>
 		</div>
+		<?php endif; ?>
 	</header>
 	<?php themex_cover_image(); ?>
 	<div class="post__content">
