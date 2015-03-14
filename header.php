@@ -4,6 +4,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="developer" content="@XtreamWayz" />
+	<link rel="developer" href="https://xtreamwayz.github.io/" />
 	<?php if (is_singular() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply', false, array(), false, true);
 	} ?>
