@@ -1,12 +1,13 @@
 $(document).ready(function() {
     var $container = $('.navbar-container');
+    var $sibling = $container.next();
 
     $container.on('affix.bs.affix', function() {
-        $('.content').css('padding-top', $container.height());
+        $sibling.css('margin-top', $container.height());
     });
 
     $container.on('affix-top.bs.affix', function (){
-        $('.content').css('padding-top', 0);
+        $sibling.css('margin-top', 0);
     });
 
     $(window).on('load', function() {
