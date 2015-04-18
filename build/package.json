@@ -2,15 +2,12 @@
     "name": "Theme-X",
     "private": true,
     "scripts": {
-        "setup": "npm run setup:npm -s && npm run setup:bower -s && npm run setup:jshint -s && npm run setup:less -s && npm run setup:uglify-js -s && npm run setup:watch -s && npm run setup:parallelshell -s && npm run setup:live-reload",
+        "setup": "npm run setup:npm -s && npm run setup:bower -s && npm run setup:jshint -s && npm run setup:less -s && npm run setup:uglify-js -s",
         "setup:npm": "npm install -g npm",
         "setup:bower": "npm install -g bower",
         "setup:jshint": "npm install -g jshint",
         "setup:less": "npm install -g less",
         "setup:uglify-js": "npm install -g uglify-js",
-        "setup:watch": "npm install -g watch",
-        "setup:parallelshell": "npm install -g parallelshell",
-        "setup:live-reload": "npm install -g live-reload",
 
         "update": "npm run update:bower -s",
         "update:bower": "bower install",
@@ -25,12 +22,6 @@
         "build:icons": "cp bower_components/bootstrap/fonts/** ../assets/fonts/",
         "build:jquery": "uglifyjs bower_components/jquery/dist/jquery.js -o ../assets/js/jquery.js -c -m",
         "build:scripts": "cat bower_components/bootstrap/dist/js/bootstrap.js src/js/*.js | uglifyjs -o ../assets/js/bundle.js -mc",
-        "prebuild:scripts": "npm run test:lint -s",
-
-        "livereload": "live-reload --port 35729 ../assets",
-
-        "watch": "parallelshell \"npm run livereload\" \"npm run watch:scripts\" \"npm run watch:styles\"",
-        "watch:styles": "watch \"npm run build:styles\" src/css/",
-        "watch:scripts": "watch \"npm run build:scripts\" src/js/"
+        "prebuild:scripts": "npm run test:lint -s"
     }
 }
