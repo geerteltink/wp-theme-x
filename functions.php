@@ -186,8 +186,7 @@ function disable_emojis_tinymce($plugins)
 function themex_enqueue_scripts()
 {
     if (!is_admin()) {
-        wp_enqueue_style('font-noto-serif',
-            '//www.google.com/fonts#ReviewPlace:refine/Collection:Noto+Serif:400,700,400italic,700italic');
+        wp_deregister_style('open-sans');
         wp_enqueue_style('themex-css', get_template_directory_uri() . '/assets/css/stylesheet.css', []);
 
         wp_deregister_script('jquery');
