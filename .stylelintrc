@@ -1,0 +1,13 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-no-invalid-hex": true,
+    "max-empty-lines": 1,
+
+    "at-rule-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true
+  }
+}

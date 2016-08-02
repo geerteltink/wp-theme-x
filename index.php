@@ -26,8 +26,11 @@
                 // End the loop.
             endwhile;
 
-            // Previous/next page navigation.
-            themex_pagination();
+            the_posts_pagination([
+                'prev_text'          => 'Previous page',
+                'next_text'          => 'Next page',
+                'before_page_number' => '<span class="meta-nav screen-reader-text">Page</span>',
+            ]);
 
         } else {
             // If no content, include the "No posts found" template.

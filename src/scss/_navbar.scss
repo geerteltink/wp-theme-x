@@ -1,0 +1,36 @@
+.navbar {
+  background-color: $gray-dark;
+}
+
+.navbar,
+.navbar a {
+  color: $gray-lighter;
+}
+
+.navbar-primary {
+  transition: all 0.25s ease-in-out;
+
+  margin-bottom: 0;
+}
+
+// Scrolling past the element you want affixed should trigger the actual affixing.
+.navbar-container.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+
+  // TODO: Move into modifier class
+  //box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.75);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  .navbar {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.navbar-brand {
+  transition: all 0.25s ease-in-out;
+}

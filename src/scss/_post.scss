@@ -1,0 +1,44 @@
+.post__header {
+  padding: 1rem 4% 1rem 4%;
+}
+
+.post__meta {
+  color: $gray-light;
+  text-transform: uppercase;
+}
+
+.post__content {
+  padding: 0 4%;
+
+  a {
+    color: $link-color;
+  }
+}
+
+.post-aside__block {
+  color: $gray-light;
+  padding: 0.5em 1em;
+  margin: 0 0 1.5em 1em;
+  border-left: 1px solid $gray-lighter;
+  font-size: $font-size-sm;
+}
+
+.post-author__by {
+  text-transform: uppercase;
+}
+
+.post-author__name {
+  color: $gray-light;
+  font-weight: bold;
+  font-size: $font-size-base;
+}
+
+.post-author__avatar {
+  img {
+    border-radius: 50%;
+  }
+}
+
+.sticky .article__meta {
+  display: none;
+}

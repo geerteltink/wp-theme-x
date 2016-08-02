@@ -1,3 +1,4 @@
-/build/bower_components/
-/build/node_modules/
-/build/npm-debug.*
+/assets/css/stylesheet.css
+/assets/css/stylesheet.prefixed.css
+/node_modules
+/vendor

@@ -1,0 +1,30 @@
+.widget {
+  margin-bottom: 1rem;
+
+  a {
+    color: #337ab7;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.widget__title {
+  font-size: $font-size-base;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #333;
+  padding: 5px 10px;
+}
+
+.searchform {
+  margin-top: 22px;
+}

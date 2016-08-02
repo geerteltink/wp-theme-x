@@ -1,0 +1,11 @@
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  background-color: $gray-dark;
+}
+
+.footer,
+.footer a {
+  color: $gray-lighter;
+}
