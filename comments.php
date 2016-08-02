@@ -1,6 +1,6 @@
 <?php
 if (post_password_required()) {
-	return;
+    return;
 }
 ?>
 
@@ -8,26 +8,26 @@ if (post_password_required()) {
     <?php if (have_comments()) : ?>
         <h3 class="comments-title">
             <?php
-                printf(
-                    _nx(
-                        'One response to &ldquo;%2$s&rdquo;',
-                        '%1$s Responses to &ldquo;%2$s&rdquo;',
-                        get_comments_number(),
-                        'comments title',
-                        'themex'
-                    ), number_format_i18n(get_comments_number()), get_the_title()
-                );
+            printf(
+                _nx(
+                    'One response to &ldquo;%2$s&rdquo;',
+                    '%1$s Responses to &ldquo;%2$s&rdquo;',
+                    get_comments_number(),
+                    'comments title',
+                    'themex'
+                ), number_format_i18n(get_comments_number()), get_the_title()
+            );
             ?>
         </h3>
         <ul class="list-unstyled">
             <?php
-                wp_list_comments(array(
-                    'style'       => 'ul',
-                    'short_ping'  => true,
-                    'avatar_size' => 64,
-                    'format'      => 'html5',
-                    'walker' => new Themex_Comment_Walker()
-                ));
+            wp_list_comments([
+                'style'       => 'ul',
+                'short_ping'  => true,
+                'avatar_size' => 64,
+                'format'      => 'html5',
+                'walker'      => new Themex_Comment_Walker(),
+            ]);
             ?>
         </ul>
 

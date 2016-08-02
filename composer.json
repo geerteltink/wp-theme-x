@@ -1,12 +1,14 @@
 {
-    "name": "xtreamwayz/wp-theme-x",
-    "description": "WordPress Theme-X framework",
-    "type": "wordpress-theme",
-    "homepage": "https://github.com/xtreamwayz/theme-x",
-    "license": "MIT",
-    "authors": [{
-        "name": "Geert Eltink",
-        "homepage": "https://xtreamwayz.github.io/",
-        "role": "Lead Developer"
-    }]
+  "name": "xtreamwayz/wp-theme-x",
+  "description": "WordPress Theme-X framework",
+  "type": "wordpress-theme",
+  "homepage": "https://github.com/xtreamwayz/theme-x",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Geert Eltink",
+      "homepage": "https://xtreamwayz.github.io/",
+      "role": "Lead Developer"
+    }
+  ]
 }

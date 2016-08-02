@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
-		<?php
-		// Start the loop.
-		while (have_posts()) : the_post();
+        <?php
+        // Start the loop.
+        while (have_posts()) : the_post();
 
-			// Include the page content template.
-			get_template_part('content', 'page');
+            // Include the page content template.
+            get_template_part('content', 'page');
 
-		// End the loop.
-		endwhile;
-		?>
+            // End the loop.
+        endwhile;
+        ?>
 
-	</main>
+    </main>
 </div>
 
 <?php get_footer(); ?>
